@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Oblikovalec</title>
+    <link rel="stylesheet" href="slog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="vrh">
+
+        <div class="logo">
+            <img src="Slike/Pintar business logo.png" alt="logo">
+        </div>
+        
+        <nav>
+
+                <div class="telmenu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="rac">
+
+                    <a href="#index.html">Domov</a>
+                    <a href="#omeni">O meni</a>
+                    <a href="#storitve">Storitve</a>
+                    <a href="#projekti">Projekti</a>
+                    <a href="#kontakt">Kontakt</a>
+
+                </div>
+
+                <div class="tel">
+
+                    <a href="#index.html">Domov</a>
+                    <a href="#omeni">O meni</a>
+                    <a href="#storitve">Storitve</a>
+                    <a href="#projekti">Projekti</a>
+                    <a href="#kontakt">Kontakt</a>
+
+                </div>
+
+        </nav>
+
+    </div>
+
+    <header>
+
+        <div class="headerimage">
+
+            <img src="Slike/IMG_20240229_151747-transformed.png" alt="portret">
+
+        </div>
+        
+        <div class="headertext">
+
+            <h2>UI/UX Designer</h2>
+            <h1>Živjo, sem <span>Jure Pintar</span><br>Ustvarjalec spletnih strani</h1>
+
+            <a href="#omeni" class="krog">
+                <div class="arrow-down"></div>
+            </a>
+
+        </div>
+
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.telmenu');
+    const menuItems = document.querySelector('.tel');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', function () {
+        this.classList.toggle('active');
+        menuItems.classList.toggle('active');
+        nav.classList.toggle('active'); // Dodaj ali odstrani razred active
+    });
+});
+    </script>
+
+</body>
+</html>
