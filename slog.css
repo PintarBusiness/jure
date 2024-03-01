@@ -84,7 +84,7 @@ nav a:hover::after {
 
 .headerimage img
 {
-    position: relative;
+    position: fixed;
     width: 300px;
     z-index: -1;
     bottom: 0;
