@@ -223,7 +223,7 @@ header .headertext h2, header .headertext h1
 
     .tel a
     {
-        display: flex;
+        display: block;
         margin-bottom: 40px;
     }
 
