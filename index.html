@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f93be84bbb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -64,7 +65,7 @@
             <h2>UI/UX Designer</h2>
             <h1>Živjo, sem <span>Jure Pintar</span><br>Razvijalec spletnih strani</h1>
 
-            <a href="#omeni" class="krog" onclick="smoothScroll(event)">
+            <a href="#omeni" class="krog" onclick="smoothScroll('#omeni')">
                 <div class="arrow-down"></div>
             </a>
 
@@ -97,22 +98,15 @@
 
                 <div class="sez1">
 
-                    <h4>UI/UX</h4>
-                    <p>Razvijanje spletne strani</p>
-
-                </div>
-
-                <div class="sez1">
-
                     <h4>HTML</h4>
-                    <p>Postavljanje strukture spletne strani</p>
+                    <p>Postavljanje strukture</p>
 
                 </div>
 
                 <div class="sez1">
 
                     <h4>CSS</h4>
-                    <p>Unikatno oblikovanje spletne strani</p>
+                    <p>Unikatno oblikovanje</p>
 
                 </div>
 
@@ -128,7 +122,6 @@
             <div class="sez" id="sez2">
 
                 <div class="sez2">
-
                     <h4>2022-2023</h4>
                     <p>Izdelava spletne strani <a href="miklavzevahisa.si">Miklavževa hiša</a></p>
 
@@ -164,13 +157,92 @@
 
         </div>
 
+        <a href="#storitve" class="krogomeni" onclick="smoothScroll('#storitve')">
+            <div class="arrow-down"></div>
+        </a>
+
+
+    </div>
+
+    <div id="storitve">
+
+        <div class="storitvenaslov">
+            <h1>Storitve</h1>
+        </div>
+
+        <div class="storitvecontainer">
+
+            <div class="storitvevsebina">
+                <i class="fa-solid fa-code"></i>
+                <h2>Oblikovanje spletnih strani</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
+                <a href="#">Več o tem</a>
+
+            </div>
+
+            <div class="storitvevsebina">
+                <i class="fa-brands fa-app-store"></i>
+                <h2>Oblikovanje aplikacij</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
+                <a href="#">Več o tem</a>
+
+            </div>
+
+            <div class="storitvevsebina">
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX oblikovanje</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
+                <a href="#">Več o tem</a>
+
+            </div>
+
+
+        </div>
+
+        <a href="#projekti" class="krogstoritve" onclick="smoothScroll('#projekti')">
+            <div class="arrow-down"></div>
+        </a>
+
+    </div>
+
+    <div id="projekti">
+
+
+
 
 
 
     </div>
 
 
+    <script>
+        function smoothScroll(target) {
+    var targetElement = document.querySelector(target);
+    var targetPosition = targetElement.offsetTop;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var duration = 1000; // Čas animacije v milisekundah
+    var start = null;
 
+    function animation(currentTime) {
+        if (start === null) start = currentTime;
+        var timeElapsed = currentTime - start;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    // Easing funkcija za gladko animacijo
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -186,26 +258,29 @@
 });
     </script>
 
-    <script>
-            document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('sez1').style.display = 'block';
-
-    var omenisezLinks = document.querySelectorAll('.omenisez a');
-    omenisezLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            var targetId = link.getAttribute('href').slice(1);
-            var targetSez = document.getElementById(targetId);
-            var allSez = document.querySelectorAll('.sez');
-
-            allSez.forEach(function(sez) {
-                sez.style.display = 'none';
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('sez1').style.display = 'block';
+    
+        var omenisezLinks = document.querySelectorAll('.omenisez a');
+        omenisezLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prepreči privzeto obnašanje povezave
+                
+                var targetId = link.getAttribute('href').slice(1);
+                var targetSez = document.getElementById(targetId);
+                var allSez = document.querySelectorAll('.sez');
+    
+                allSez.forEach(function(sez) {
+                    sez.style.display = 'none';
+                });
+    
+                targetSez.style.display = 'block';
             });
-
-            targetSez.style.display = 'block';
         });
     });
-});
     </script>
+    
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
