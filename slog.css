@@ -170,6 +170,13 @@ header .headertext h2, header .headertext h1
 {
     opacity: 0;
     transform: translateX(-100%);
+    animation: none;
+}
+
+header .headertext h2.show, header .headertext h1.show 
+{
+    opacity: 1;
+    transform: translateX(0);
     animation: prikaziBesedilo 5s ease forwards;
 }
 
@@ -414,6 +421,57 @@ header .headertext h2, header .headertext h1
 {
     left: 0;
     width: 100%;
+}
+
+@keyframes fadeInOmeni 
+{
+    from 
+    {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    to 
+    {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.omenitext 
+{
+    visibility: hidden;
+}
+
+.omenitext.show 
+{
+    visibility: visible;
+    animation: fadeInOmeni 3s ease forwards;
+
+}
+
+@keyframes fadeInOmeniimg 
+{
+    from 
+    {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to 
+    {
+        opacity: 1;
+        transform: translateY(1);
+    }
+}
+
+.omeniimage 
+{
+    opacity: 0;
+}
+
+.omeniimage.show 
+{
+    opacity: 1;
+    animation: fadeInOmeniimg 3s ease forwards;
 }
 
 .sez

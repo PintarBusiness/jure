@@ -31,7 +31,7 @@
 
                     <a href="#index.html">Domov</a>
                     <a href="#omeni">O meni</a>
-                    <a href="#znanja">Znanja</a>
+                    <a href="#storitve">Storitve</a>
                     <a href="#projekti">Projekti</a>
                     <a href="#kontakt">Kontakt</a>
 
@@ -41,7 +41,7 @@
 
                     <a href="#index.html">Domov</a>
                     <a href="#omeni">O meni</a>
-                    <a href="#znanja">Znanja</a>
+                    <a href="#storitve">Storitve</a>
                     <a href="#projekti">Projekti</a>
                     <a href="#kontakt">Kontakt</a>
 
@@ -88,9 +88,9 @@
             <p>Vaša spletna stran je <span>odraz vaše identitete in vrednot</span>. Ker je pomembno, da zaupate svojo vizijo nekomu, ki bo skrbno in ustvarjalno predstavil vaše ideje, sem tukaj, da vam pomagam.</p>
             
             <div class="omenisez">
-                <a href="#sez1">Znanja</a>
-                <a href="#sez2">Projekti</a>
-                <a href="#sez3">Izobraževanje</a>
+                <a href="#sez1" data-target="#sez1">Znanja</a>
+                <a href="#sez2" data-target="#sez2">Projekti</a>
+                <a href="#sez3" data-target="#sez3">Izobraževanje</a>
             </div>
 
             <div class="sez" id="sez1">
@@ -181,30 +181,26 @@
     menuToggle.addEventListener('click', function () {
         this.classList.toggle('active');
         menuItems.classList.toggle('active');
-        nav.classList.toggle('active'); // Dodaj ali odstrani razred active
+        nav.classList.toggle('active');
     });
 });
     </script>
 
     <script>
             document.addEventListener('DOMContentLoaded', function() {
-    // Prikaz prvega sezona ob nalaganju strani
     document.getElementById('sez1').style.display = 'block';
 
-    // Rokovanje s klikom na povezave
     var omenisezLinks = document.querySelectorAll('.omenisez a');
     omenisezLinks.forEach(function(link) {
         link.addEventListener('click', function(event) {
-            var targetId = link.getAttribute('href').slice(1); // Izvlečemo ID cilja
-            var targetSez = document.getElementById(targetId); // Izvlečemo ciljni sez element
-            var allSez = document.querySelectorAll('.sez'); // Izvlečemo vse sez elemente
+            var targetId = link.getAttribute('href').slice(1);
+            var targetSez = document.getElementById(targetId);
+            var allSez = document.querySelectorAll('.sez');
 
-            // Skrijemo vse sez elemente
             allSez.forEach(function(sez) {
                 sez.style.display = 'none';
             });
 
-            // Prikaz ciljnega sez elementa
             targetSez.style.display = 'block';
         });
     });
@@ -212,18 +208,49 @@
     </script>
 
     <script>
-        function smoothScroll(event) {
-    event.preventDefault(); // Prepreči privzeto obnašanje klika na povezavo
+        document.addEventListener("DOMContentLoaded", function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelector('.omenitext').classList.add('show');
+                        entry.target.querySelector('.omeniimage').classList.add('show');
+                    } else {
+                        entry.target.querySelector('.omenitext').classList.remove('show');
+                        entry.target.querySelector('.omeniimage').classList.remove('show');
+                    }
+                });
+            });
 
-    const targetId = event.currentTarget.getAttribute("href"); // Pridobi ciljni ID iz povezave
-    const targetElement = document.querySelector(targetId); // Poišči element s ciljnim ID
-
-    // Uporabi smooth scrolling za pomikanje do ciljnega elementa
-    targetElement.scrollIntoView({
-        behavior: "smooth"
-    });
-}
+            var element = document.querySelector('#omeni');
+            observer.observe(element);
+        });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var h2 = entry.target.querySelector('.headertext h2');
+                        var h1 = entry.target.querySelector('.headertext h1');
+                        h2.classList.add('show');
+                        h1.classList.add('show');
+                    } else {
+                        var h2 = entry.target.querySelector('.headertext h2');
+                        var h1 = entry.target.querySelector('.headertext h1');
+                        h2.classList.remove('show');
+                        h1.classList.remove('show');
+                    }
+                });
+            });
+
+            var element = document.querySelector('.headertext');
+            observer.observe(element);
+        });
+    </script>
+
+
+
 
 </body>
 </html>
