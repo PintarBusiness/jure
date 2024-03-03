@@ -65,7 +65,7 @@
             <h2>UI/UX Designer</h2>
             <h1>Živjo, sem <span>Jure Pintar</span><br>Razvijalec spletnih strani</h1>
 
-            <a href="#omeni" class="krog" onclick="smoothScroll('#omeni')">
+            <a href="#omeni" class="krog">
                 <div class="arrow-down"></div>
             </a>
 
@@ -157,7 +157,7 @@
 
         </div>
 
-        <a href="#storitve" class="krogomeni" onclick="smoothScroll('#storitve')">
+        <a href="#storitve" class="krogomeni" >
             <div class="arrow-down"></div>
         </a>
 
@@ -199,7 +199,7 @@
 
         </div>
 
-        <a href="#projekti" class="krogstoritve" onclick="smoothScroll('#projekti')">
+        <a href="#projekti" class="krogstoritve">
             <div class="arrow-down"></div>
         </a>
 
@@ -207,12 +207,117 @@
 
     <div id="projekti">
 
+            <div class="projektinaslov">
+                <h1>Projekti</h1>
+            </div>
+    
+            <div class="projekticontainer">
+    
+                <div class="projektivsebina">
 
+                    <img class="mh" src="Slike/IMG_20240303_102039.jpg" alt="mh" width="350px">
 
+                    <div class="projektivsebinatext">
 
+                        <h2>Miklavževa hiša</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
+                        <a href="miklavzevahisa.si"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 
+                    </div>
+
+                </div>
+
+                <div class="projektivsebina">
+                    
+                    <img class="lgc" src="Slike/IMG_20240303_101826.jpg" alt="lgc" width="350px">
+
+                    <div class="projektivsebinatext">
+
+                        <h2>Lesni center Gojzd</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
+                        <a href="lesnicentergojzd.si"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+                    </div>
+    
+                </div>
+    
+                <div class="projektivsebina">
+                    
+                    <img src="Slike/IMG_20240303_102008.jpg" alt="os" width="350px">
+
+                    <div class="projektivsebinatext">
+
+                        <h2>Osebna spletna stran</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+                    </div>
+    
+                </div>
+    
+    
+            </div>
+    
+            <a href="#kontakt" class="krogprojekti1">
+                <div class="arrow-down"></div>
+            </a>
+
+            <a href="#kontakt" class="krogprojekti2">
+                <div class="arrow-down"></div>
+            </a>
 
     </div>
+
+    <div id="kontakt">
+
+       <div class="kontaktcontainer">
+
+            <div class="vrsta">
+
+                <div class="kontaktleva">
+
+                    <h1 class="naslov">Kontaktiraj me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>jurepintar.business@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>069 671 987</p>
+
+                    <div class="ikone">
+
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+
+                    </div>
+
+                    <a href="" download class="gumb">Prenesi CV</a>
+
+                </div>
+
+                <div class="kontaktdesna">
+
+                    <form id="kontakt-form">
+
+                        <input type="text" name="ime" placeholder="Ime" required>
+                        <input type="text" name="priimek" placeholder="Priimek" required>
+                        <input type="email" name="email" placeholder="Elektronski naslov" required>
+                        <input type="text" name="zadeva" placeholder="Zadeva" required>
+                        <textarea name="sporočilo" rows="6" placeholder="Sporočilo" required></textarea>
+                        <button type="submit" class="gumbkontakt">Pošlji</button>
+                        <div id="success-message" class="success-message" style="display: none;">Sporočilo je bilo uspešno poslano!</div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+       </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>Vse pravice pridržane! | © 2024</p>
+   </div>
 
 
     <script>
@@ -324,8 +429,9 @@
         });
     </script>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-
+    <script src="script.js"></script>
 
 </body>
 </html>
