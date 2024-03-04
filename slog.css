@@ -220,6 +220,12 @@ header .headertext h2.show, header .headertext h1.show
     {
         top: 250px;
     }
+
+    .ja
+    {
+        min-height: 15vh;
+    }
+
 }
 
 
@@ -519,7 +525,7 @@ header .headertext h2.show, header .headertext h1.show
 {
     .krogomeni
     {
-        bottom: -700px;
+        bottom: -780px;
     }
 
     .omeniimage img, .omenitext
@@ -922,8 +928,8 @@ header .headertext h2.show, header .headertext h1.show
         display: block;
         width: 300px;
         border-radius: 10px;
-        margin-right: 340px;
-        margin-top: -100px;
+        margin-right: 345px;
+        margin-top: -200px;
         transition: transform 0.5s;
     }
 
@@ -934,7 +940,7 @@ header .headertext h2.show, header .headertext h1.show
 
     .projektinaslov h1
     {
-        margin-top: 200px;
+        margin-top: 100px;
         margin-left: 160px;
     }
 
@@ -962,7 +968,7 @@ header .headertext h2.show, header .headertext h1.show
         position: absolute;
         bottom: 0;
         left: 33.5%;
-        bottom: -2450px;
+        bottom: -2400px;
     }
 
     .krogprojekti2
@@ -970,7 +976,7 @@ header .headertext h2.show, header .headertext h1.show
         position: absolute;
         bottom: 0;
         left: 65.5%;
-        bottom: -2450px;
+        bottom: -2400px;
     }
 }
 

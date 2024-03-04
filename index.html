@@ -13,7 +13,7 @@
 
 <body>
 
-
+    <div class="ja">
     <div class="vrh">
 
         <div class="logo">
@@ -72,6 +72,7 @@
         </div>
 
     </header>
+    </div>
 
     <div id="omeni">
 
@@ -221,7 +222,7 @@
 
                         <h2>Miklavževa hiša</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
-                        <a href="miklavzevahisa.si"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://www.miklavzevahisa.si"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 
                     </div>
 
@@ -235,7 +236,7 @@
 
                         <h2>Lesni center Gojzd</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde, itaque iusto vitae ut odit sapiente, veniam vero quisquam libero dicta molestiae architecto, facere harum pariatur dignissimos assumenda ipsam incidunt.</p>
-                        <a href="lesnicentergojzd.si"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://pintarbusiness.github.io/lgc/index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 
                     </div>
     
@@ -319,6 +320,30 @@
         <p>Vse pravice pridržane! | © 2024</p>
    </div>
 
+   <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Pridobimo vse gumbe "Več o tem"
+    var buttons = document.querySelectorAll('.storitvevsebina a[href="#"]');
+    
+    // Dodamo poslušalce dogodkov klikanja na vsak gumb "Več o tem"
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Preprečimo privzeto vedenje povezave
+            
+            // Pridobimo naslov storitve iz starša gumba
+            var storitevNaslov = this.parentNode.querySelector('h2').textContent;
+            
+            // Preusmerimo na oddelek "kontakt"
+            window.location.href = "#kontakt";
+            
+            // Vstavimo naslov storitve v polje "Zadeva" v kontaktnem obrazcu
+            var zadevaPolje = document.querySelector('input[name="zadeva"]');
+            zadevaPolje.value = storitevNaslov;
+        });
+    });
+});
+
+   </script>
 
     <script>
         function smoothScroll(target) {
